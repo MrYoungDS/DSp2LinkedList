@@ -14,7 +14,8 @@
  * with an object reference, and only overwrite a reference if you no longer need the
  * object that it is referencing.
  *
- * You may, of course, wish to add additional instance fields and private methods.
+ * You may, of course, wish to add additional instance fields and private methods, but
+ * please do not modify the inner <code>Node</code> class (you can change variable names).
  * Be sure to manage the <code>IndexOutOfBoundsException</code>.
  */
 
