@@ -1,19 +1,19 @@
 /**
  * The MyLinkedList class is the implementation of a singly-linked list of integers.
- *
+ * <p>
  * The data in the list will be stored in <code>Node</code> objects, with each node
  * storing one integer and a link to the next node in the list. To make things
  * simple, we will implement <code>Node</code> as a private inner class with public fields.
  * Our <code>MyLinkedList</code> will implement some of the same methods as the
  * <code>MyArrayList</code> class, but with three versions of add: addFirst, addLast, and
  * add with an index for the position of the new node after the operation.
- *
+ * <p>
  * Students should not, obviously, use the <code>java.util.LinkedList</code> Java library class.
  * Due to the nature of the garbage collector, attention must be paid to the order used
  * for certain operations - you need to "hold on" to anything you do not want to lose
  * with an object reference, and only overwrite a reference if you no longer need the
  * object that it is referencing.
- *
+ * <p>
  * You may, of course, wish to add additional instance fields and private methods, but
  * please do not modify the inner <code>Node</code> class (you can change variable names).
  * Be sure to manage the <code>IndexOutOfBoundsException</code>.
@@ -27,14 +27,14 @@ public class MyLinkedList
      * it is safe to make the instance fields here public. Please do not modify
      * this class.
      */
-    private class Node
+    private static class Node
     {
         // These fields default to 0 and null, but you can modify them directly.
         public Integer value;
         public Node next;
     }
 
-    private Node first;
+    private Node list;
 
     /**
      * Constructs an empty list.
@@ -45,19 +45,19 @@ public class MyLinkedList
 
     /**
      * Appends the specified Integer to the beginning of the list.
-     * @param value Integer to be appended to this list
-     * @throws NullPointerException if value is null
+     * @param item Integer to be appended to this list
+     * @throws NullPointerException if item is null
      */
-    public void addFirst(Integer value) {
+    public void addFirst(Integer item) {
         // TODO your code here
     }
 
     /**
      * Appends the specified Integer to the end of the list.
-     * @param value Integer to be appended to this list
-     * @throws NullPointerException if value is null
+     * @param item Integer to be appended to this list
+     * @throws NullPointerException if item is null
      */
-    public void addLast(Integer value) {
+    public void addLast(Integer item) {
         // TODO your code here
     }
 
@@ -66,11 +66,11 @@ public class MyLinkedList
      * Shifts the element currently in that position (if any) and any subsequent
      * elements to the right (adding one to their indices).
      * @param index index at which the specified Integer is to be inserted
-     * @param value Integer to be inserted
+     * @param item Integer to be inserted
      * @throws IndexOutOfBoundsException if index is out of bounds
-     * @throws NullPointerException if value is null
+     * @throws NullPointerException if item is null
      */
-    public void add(int index, Integer value) {
+    public void add(int index, Integer item) {
         // TODO your code here
     }
 
@@ -101,11 +101,11 @@ public class MyLinkedList
      * Replaces the Integer at the specified position in this list with the
      * specified Integer.
      * @param index index of the integer to replace
-     * @param value Integer to be stored at the specified position
+     * @param item Integer to be stored at the specified position
      * @throws IndexOutOfBoundsException if index is out of bounds
-     * @throws NullPointerException if value is null
+     * @throws NullPointerException if item is null
      */
-    public void set(int index, Integer value) {
+    public void set(int index, Integer item) {
         // TODO your code here
     }
 
@@ -121,23 +121,23 @@ public class MyLinkedList
     /**
      * Returns the index of the first occurrence of the specified Integer in this list,
      * or -1 if this list does not contain the Integer.
-     * @param value Integer to search for
+     * @param item Integer to search for
      * @return the index of the first occurrence of the specified Integer in this list,
      * or -1 if this list does not contain the Integer
-     * @throws NullPointerException if value is null
+     * @throws NullPointerException if item is null
      */
-    public int indexOf(Integer value) {
+    public int indexOf(Integer item) {
         // TODO replace the code here
         return 0;
     }
 
     /**
      * Returns <code>true</code> if this list contains the specified Integer.
-     * @param value Integer whose presence in this list is to be tested
+     * @param item Integer whose presence in this list is to be tested
      * @return true if this list contains the specified Integer
-     * @throws NullPointerException if value is null
+     * @throws NullPointerException if item is null
      */
-    public boolean contains(Integer value) {
+    public boolean contains(Integer item) {
         // TODO replace the code here
         return false;
     }

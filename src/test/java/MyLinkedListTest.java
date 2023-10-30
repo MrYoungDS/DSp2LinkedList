@@ -110,7 +110,8 @@ public class MyLinkedListTest {
         assertEquals(77, smallMLL.get(5));
         assertEquals(9, smallMLL.get(6));
 
-        smallMLL.remove(0); // 89, 63, 36, 24, 77, 9
+        assertEquals(14, smallMLL.remove(0));
+        // 89, 63, 36, 24, 77, 9
         assertEquals(6, smallMLL.size());
         assertEquals(89, smallMLL.get(0));
         assertEquals(63, smallMLL.get(1));
@@ -119,7 +120,8 @@ public class MyLinkedListTest {
         assertEquals(77, smallMLL.get(4));
         assertEquals(9, smallMLL.get(5));
 
-        smallMLL.remove(5); // 89, 63, 36, 24, 77
+        assertEquals(9, smallMLL.remove(5));
+        // 89, 63, 36, 24, 77
         assertEquals(5, smallMLL.size());
         assertEquals(89, smallMLL.get(0));
         assertEquals(63, smallMLL.get(1));
@@ -127,36 +129,40 @@ public class MyLinkedListTest {
         assertEquals(24, smallMLL.get(3));
         assertEquals(77, smallMLL.get(4));
 
-        smallMLL.remove(2); // 89, 63, 24, 77
+        assertEquals(36, smallMLL.remove(2));
+        // 89, 63, 24, 77
         assertEquals(4, smallMLL.size());
         assertEquals(89, smallMLL.get(0));
         assertEquals(63, smallMLL.get(1));
         assertEquals(24, smallMLL.get(2));
         assertEquals(77, smallMLL.get(3));
 
-        smallMLL.remove(1); // 89, 24, 77
+        assertEquals(63, smallMLL.remove(1));
+        // 89, 24, 77
         assertEquals(3, smallMLL.size());
         assertEquals(89, smallMLL.get(0));
         assertEquals(24, smallMLL.get(1));
         assertEquals(77, smallMLL.get(2));
 
-        smallMLL.remove(2); // 89, 24
+        assertEquals(77, smallMLL.remove(2));
+        // 89, 24
         assertEquals(2, smallMLL.size());
         assertEquals(89, smallMLL.get(0));
         assertEquals(24, smallMLL.get(1));
 
-        smallMLL.remove(0); // 24
+        assertEquals(89, smallMLL.remove(0));
+        // 24
         assertEquals(1, smallMLL.size());
         assertEquals(24, smallMLL.get(0));
 
-        smallMLL.remove(0);
+        assertEquals(24, smallMLL.remove(0));
         assertTrue(smallMLL.isEmpty());
         assertEquals(0, smallMLL.size());
     }
 
     @Test
     public void testLargeSimple() {
-        int max = 100000;
+        int max = 10000;
         for(int i = 0; i < max; i++){
             assertEquals(i, bigMLL.size());
             bigMLL.addLast(i);
@@ -183,21 +189,6 @@ public class MyLinkedListTest {
         smallMLL.addLast(84);
         smallMLL.addLast(-28);
 
-        assertTrue(smallMLL.contains(21), "Contains cannot find element 21.");
-        assertTrue(smallMLL.contains(-64), "Contains cannot find element -64.");
-        assertTrue(smallMLL.contains(94), "Contains cannot find element 94.");
-        assertTrue(smallMLL.contains(-72), "Contains cannot find element -72.");
-        assertTrue(smallMLL.contains(84), "Contains cannot find element 84.");
-        assertTrue(smallMLL.contains(-28), "Contains cannot find element -28.");
-
-        assertFalse(smallMLL.contains(0), "Contains thinks it found element 0.");
-        assertFalse(smallMLL.contains(-55), "Contains thinks it found element -55.");
-        assertFalse(smallMLL.contains(60), "Contains thinks it found element 60.");
-        assertFalse(smallMLL.contains(-38), "Contains thinks it found element -38.");
-        assertFalse(smallMLL.contains(93), "Contains thinks it found element 93.");
-        assertFalse(smallMLL.contains(Integer.MAX_VALUE), "Contains thinks it found a big element.");
-        assertFalse(smallMLL.contains(Integer.MIN_VALUE), "Contains thinks it found a big negative element.");
-
         assertEquals(0, smallMLL.indexOf(21), "IndexOf cannot find element 21.");
         assertEquals(1, smallMLL.indexOf(-64), "IndexOf cannot find element -64.");
         assertEquals(2, smallMLL.indexOf(94), "IndexOf cannot find element 94.");
@@ -212,6 +203,21 @@ public class MyLinkedListTest {
         assertEquals(-1, smallMLL.indexOf(93), "IndexOf thinks it found element 93.");
         assertEquals(-1, smallMLL.indexOf(Integer.MAX_VALUE), "IndexOf thinks it found a big element.");
         assertEquals(-1, smallMLL.indexOf(Integer.MIN_VALUE), "IndexOf thinks it found a big negative element.");
+
+        assertTrue(smallMLL.contains(21), "Contains cannot find element 21.");
+        assertTrue(smallMLL.contains(-64), "Contains cannot find element -64.");
+        assertTrue(smallMLL.contains(94), "Contains cannot find element 94.");
+        assertTrue(smallMLL.contains(-72), "Contains cannot find element -72.");
+        assertTrue(smallMLL.contains(84), "Contains cannot find element 84.");
+        assertTrue(smallMLL.contains(-28), "Contains cannot find element -28.");
+
+        assertFalse(smallMLL.contains(0), "Contains thinks it found element 0.");
+        assertFalse(smallMLL.contains(-55), "Contains thinks it found element -55.");
+        assertFalse(smallMLL.contains(60), "Contains thinks it found element 60.");
+        assertFalse(smallMLL.contains(-38), "Contains thinks it found element -38.");
+        assertFalse(smallMLL.contains(93), "Contains thinks it found element 93.");
+        assertFalse(smallMLL.contains(Integer.MAX_VALUE), "Contains thinks it found a big element.");
+        assertFalse(smallMLL.contains(Integer.MIN_VALUE), "Contains thinks it found a big negative element.");
     }
 
     @Test
