@@ -29,12 +29,12 @@ public class MyLinkedList
      */
     private static class Node
     {
-        // These fields default to 0 and null, but you can modify them directly.
+        // These fields both default to null, but you can modify them directly.
         public Integer value;
         public Node next;
     }
 
-    private Node list;
+    private Node first;
 
     /**
      * Constructs an empty list.

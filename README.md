@@ -13,3 +13,7 @@ As another change to mix things up a bit, each element of our linked list will b
 is that an array of <code>Integer</code>s initializes every entry to <code>null</code>, so this project will also
 have methods that throw a <code>NullPointerException</code>. Again, you will likely want to add an instance field
 to keep track of the size of the list.
+
+It may help you to start by implementing the simple methods size, clear, and isEmpty, then addFirst, get, and set.
+This will get the first test working, and you can proceed with addLast, add, and remove, finishing with indexOf
+and contains. Just a suggestion.  ; )
